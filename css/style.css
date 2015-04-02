@@ -15,6 +15,38 @@
 .white{ color: #fff;}
 .lime-green{ color: #99bf38;}
 
+.align-center{ text-align: center;}
+
+
+/*Nav Bar*/
+.navbar-default{
+	background: #7ecefd;
+	border-radius: 0;
+	box-shadow: none;
+	border-top: 7px solid #3e454c;
+	border-bottom: 0;
+	border-right: 0;
+	border-left:0;
+	height: 100px;
+	text-transform: uppercase;
+	font-weight: 500;
+	font-size: 1.3em;
+}
+.nav > li{ margin-right: 35px;}
+.navbar-default .navbar-nav>li>a{ color: #fff; padding-top: 35px;}
+.navbar-brand, .navbar-nav>li>a{ text-shadow: none;}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.open>a{
+	background: #3e454c;
+	color: #fff;
+	text-shadow: none;
+	box-shadow: none;
+	height: 93px;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
+	background: #3e454c;
+		color: #fff;
+}
 
 /*
  * Main Section
@@ -58,18 +90,36 @@ h1,h2,h3,h4,h5,h6{
 	background: #f24713 url('../images/main-discover.png') no-repeat;
 }
 .block + h3{
-	height: 170px;
+	height: 150px;
 	margin-top: -20px;
 	display: block;
 	text-align: center;
 	text-transform: uppercase;
-	padding-top: 40px;
+	padding-top: 30px;
 	font-size: 2.7em;
 	font-weight: 300;
 }
 .block.one + h3{ background: #7ecefd;}
 .block.two + h3{ background: #99bf38;}
 .block.three + h3{ background: #f24713;}
+
+.more-info{
+	height: 50px;
+	background: #3e454c;
+	display: block;
+	cursor: pointer;
+	width: 50%;
+	padding-top: 15px;
+	margin-top: -10px;
+	text-transform: uppercase;
+	font-family: 'Lato';
+	font-weight: 300;
+}
+.more-info:hover{
+	color: rgba(255,255,255, .6);
+	text-decoration: none;
+	opacity: .8;
+}
 
 section{margin: 0 0 100px 0;}
 
