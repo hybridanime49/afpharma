@@ -19,6 +19,11 @@ body{ font-family: 'Lato', Helvetica, Arial, sans-serif;}
 
 .align-center{ text-align: center;}
 
+.uppercase{ text-transform: uppercase;}
+
+
+/*Modal */
+.modal-content{ border-radius: 0;}
 
 /*Nav Bar*/
 .navbar-default{
@@ -126,9 +131,13 @@ h1,h2,h3,h4,h5,h6{
 section{margin: 0 0 100px 0;}
 
 footer{ 
-	background: #545454;
+	background: #343a40;
 	width: 100%;
+	border-bottom: 50px solid #23272c;
+	color: #7ecefd;
 }
+
+footer ul li{ color : #7ecefd;}
 
 
 
