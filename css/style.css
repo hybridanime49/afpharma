@@ -1,3 +1,5 @@
+body{ font-family: 'Lato', Helvetica, Arial, sans-serif;}
+
 /* Boostrap overwrite */
 .well{ 
 	border: 0; 
@@ -124,9 +126,31 @@ h1,h2,h3,h4,h5,h6{
 section{margin: 0 0 100px 0;}
 
 footer{ 
-	display: none;
 	background: #545454;
 	width: 100%;
-	position: absolute;
-	bottom: 0;
 }
+
+
+
+
+/*Media Queries */
+@media screen and (max-width: 767px){
+
+	.navbar-default{ height: 60px;}
+	
+	.navbar-default .navbar-collapse, .navbar-default .navbar-form{
+		position: relative;
+		z-index: 9;
+		background: #d5d5d5;
+	}
+	.nav li.active{ margin-right: 0;}
+
+}
+
+
+
+
+
+
+
+

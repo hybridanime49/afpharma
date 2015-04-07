@@ -43,10 +43,10 @@
 			    <!-- Collect the nav links, forms, and other content for toggling -->
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-				        <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
-				        <li><a href="#">What we Do</a></li>
-				        <li><a href="#">Careers</a></li>
-				        <li><a href="#">Contact Us</a></li>
+				        <li class="active"><a href="#main">Home <span class="sr-only">(current)</span></a></li>
+				        <li><a href="#what-we-do">What we Do</a></li>
+				        <li><a href="#careers">Careers</a></li>
+				        <li><a href="#contact-us">Contact Us</a></li>
 				        <li class="dropdown">
 				          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown 
 				          	<span class="caret"></span>
@@ -67,7 +67,7 @@
 		</div><!-- /.container-fluid -->
 	</nav>
 
-	<section class="main">
+	<section id="main">
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
@@ -104,6 +104,65 @@
 			</div>	
 		</div>
 	</section>
+
+	<section id="what-we-do">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h1>What We Do</h1>
+					<p>Strong science and uncompromising quality underlies everything we do at AF Pharma Inc. We are focused on three market segments:</p>
+					<ul>
+						<li class="orange">Development and manufacturing of specialty prescription generics for the US market</li>
+						<li class="orange">Quality and regulatory consulting for pharmaceutical companies in the US</li>
+						<li class="orange">Development, licensing and export of dietary supplements and OTC medicines for emerging markets</li>
+					</ul>
+					<p>We are able to work with our various development and manufacturing partners in the North East USA to deliver high quality products for our partners and customers.</p>
+					<p><a href="#">Please view our capabilities here</a></p>
+					<p>We are a small growing company with an excellent track record in science and quality. We are able to deliver outstanding value to our customres because we are motivated, small, and flexible.</p>
+					<p>Through years of experience in the North American pharmaceutical industry, we are able to work with a range of excellent manufacturing partners in the North East USA to ensure that we deliver the best.</p>
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="careers">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h1>Careers</h1>
+					<p>We are currently looking for an entry level analytical chemist. If you're a dynamic self-starter looking to work in a small but growing pharamceutical corporation, please email your resume and cover to <a href="mailto:xxxx@afpharmainc.com">xxxx@afphamrainc.com</a></p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="contact-us">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h1>Contact Us</h1>
+					<table class="table">
+						<tr>
+							<td>Mail Address:</td>
+							<td>292 Hamilton Blvd., Piscataway, New Jersey</td>
+						</tr>
+						<tr>
+							<td>Phone:</td>
+							<td>123.123.1234</td>
+						</tr>
+						<tr>
+							<td>Email:</td>
+							<td><a href="mailto:sales@afpharmainc.com">sales@afpharmainc.com</a></td>
+						</tr>
+					</table>
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+
   	<footer class="footer nav-fixed-bottom">
   		<div class="container">
   			<div class="row">
@@ -123,5 +182,14 @@
 			</div>
 		</div>
 	</footer>
+
+	<script type="text/javaScript">
+
+		$(function(){
+			$('.nav li a').smoothScroll();
+		});
+
+	</script>
+
 </body>
 </html>
