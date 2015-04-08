@@ -49,20 +49,6 @@
 				        <li><a href="#what-we-do">What we Do</a></li>
 				        <li><a href="#careers">Careers</a></li>
 				        <li><a href="#contact-us">Contact Us</a></li>
-				        <li class="dropdown">
-				          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown 
-				          	<span class="caret"></span>
-				          </a>
-				          <ul class="dropdown-menu" role="menu">
-				            <li><a href="#"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>Action</a></li>
-				            <li><a href="#">Another action</a></li>
-				            <li><a href="#">Something else here</a></li>
-				            <li class="divider"></li>
-				            <li><a href="#">Separated link</a></li>
-				            <li class="divider"></li>
-				            <li><a href="#">One more separated link</a></li>
-				          </ul>
-				        </li>
 					</ul>
 				</div><!-- /.navbar-collapse -->
 			</div>
@@ -266,8 +252,8 @@
   	<footer class="footer nav-fixed-bottom">
   		<div class="container">
   			<div class="row">
-  				<div class="col-sm-6">
-  					<h4>Information</h4>
+  				<div class="col-sm-4 margin-top-bottom-20">
+  					<h5>Information</h5>
   					<ul>
   						<li><a href="#main">Home <span class="sr-only">(current)</span></a></li>
 				        <li><a href="#what-we-do">What we Do</a></li>
@@ -276,10 +262,15 @@
   					</ul>
 				</div>
 
-  				<div class="col-sm-3">
-					Footer stuff
+  				<div class="col-sm-4 margin-top-bottom-20">
+  					<h5>Contact Us</h5>
+  					<h2>AF Pharma</h2>
+  					<p>292 Hamilton Blvd., Piscataway, NJ</p>
+  					<i class="fa fa-phone-square"></i><span>123.123.1234</span><br/>
+  					<i class="fa fa-envelope"></i><span><a href="mailto:sales@afpharmainc.com">sales@afpharmainc.com</a></span>
 				</div>
-  				<div class="col-sm-3">
+  				<div class="col-sm-4 margin-top-bottom-20 ">
+  					<h5>Follow Us</h5>
   					<i class="fa fa-facebook-square"></i>
   					<i class="fa fa-twitter-square"></i>
   					<i class="fa fa-youtube"></i>
@@ -292,6 +283,11 @@
 
 		$(function(){
 			$('.nav li a, footer li a').smoothScroll();
+
+			$('.nav li').on('click', function(){
+				$(this).addClass('active');
+				$(this).siblings().removeClass('active');
+			})
 		});
 
 	</script>
