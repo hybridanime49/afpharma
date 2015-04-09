@@ -14,6 +14,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.6/animate.min.css">
 
 	<link rel="stylesheet" href="css/style.css">
 
@@ -90,7 +91,7 @@
 								<div class="modal-body">
 									<div class="row">
 										<div class="col-sm-6">
-											<h4 class="orange">Research and Development</h4>
+											<h4>Research and Development</h4>
 											<ul>
 												<li>Developing simple or complex pharmaceutical dosage</li>
 												<li>Developing strategies for Para iv generic products for the US market</li>
@@ -100,7 +101,7 @@
 											</ul>
 										</div>
 										<div class="col-sm-6">
-											<h4 class="orange">Quality and Regulatory</h4>
+											<h4>Quality and Regulatory</h4>
 											<ul>
 												<li>Authoring quality and CMC sections</li>
 												<li>Impelemnting QbD in product development and scale-up</li>
@@ -130,7 +131,7 @@
 								<div class="modal-body">
 									<div class="row">
 										<div class="col-sm-6">
-											<h4 class="orange">Forumulation developement:</h4>
+											<h4>Forumulation developement:</h4>
 											<ul>
 												<li>Immediate and extended release tablet formulations</li>
 												<li>Immediate and extended release capsule formulations</li>
@@ -141,7 +142,7 @@
 											</ul>
 										</div>
 										<div class="col-sm-6">
-											<h4 class="orange">Process development and manufacturing</h4>
+											<h4>Process development and manufacturing</h4>
 											<ul>
 												<li>Tablets
 													<ul>
@@ -194,7 +195,7 @@
 		</div>
 	</section>
 
-	<section id="what-we-do">
+	<section id="what-we-do" class="animated offToLeft">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
@@ -215,7 +216,7 @@
 		</div>
 	</section>
 
-	<section id="careers">
+	<section id="careers" class="animated offToLeft">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
@@ -226,7 +227,7 @@
 		</div>
 	</section>
 
-	<section id="contact-us">
+	<section id="contact-us" class="animated offToLeft">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
@@ -290,7 +291,17 @@
 			$('.nav li').on('click', function(){
 				$(this).addClass('active');
 				$(this).siblings().removeClass('active');
-			})
+			});
+
+			$(window).scroll(function(){
+				if($(window).scrollTop() > 350){
+					$('section:not(:first-of-type)').removeClass('offToLeft').addClass('fadeInUp');
+				}
+				if($(window).scrollTop() < 350){
+					$('section:not(:first-of-type)').removeClass('fadeInUp').addClass('offToLeft');
+				}
+			});
+
 		});
 
 	</script>

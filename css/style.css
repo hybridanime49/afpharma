@@ -26,6 +26,12 @@ body{ font-family: 'Lato', Helvetica, Arial, sans-serif;}
 
 /*Modal */
 .modal-content{ border-radius: 0;}
+.modal-body ul{ margin-left: -25px; color: #555;}
+.modal-body h4{ color: #3e454c;}
+.modal-header{ font-size: 2.9em; color: #fff;}
+#modalCapabilities .modal-header{ background: #7ecefd;}
+#modalTechnology .modal-header{ background: #99bf38;}
+#modalPartner .modal-header{ background: #f24713;}
 
 /*Nav Bar*/
 .navbar-default{
@@ -64,6 +70,11 @@ body{ font-family: 'Lato', Helvetica, Arial, sans-serif;}
 h1,h2,h3,h4,h5,h6{
 	font-family: 'Lato', Helvetica, Arial, sans-serif;
 }
+
+
+section{margin: 0 0 100px 0;}
+section p{ font-size: 1.2em;}
+section h1{ color: #3e454c;}
 
  .logo{
  	display: block;
@@ -134,8 +145,6 @@ h1,h2,h3,h4,h5,h6{
 	color:#7ecefd;
 }
 
-section{margin: 0 0 100px 0;}
-section p{ font-size: 1.2em;}
 
 /*Footer */
 
@@ -162,9 +171,19 @@ footer ul li a:hover{ 	text-decoration: none;color : #7ecefd;}
 footer .fa{ 
 	font-size: 2em;
 	margin: 0 5px;
+	transition: color 500ms ease;
 }
-footer .fa:hover{ color: #7ecefd;}
+footer .fa:hover{ color: #7ecefd; cursor: pointer;}
 
+
+/*Animation */
+
+.animated{
+	transition: all 500s ease-in-out;
+}
+.offToLeft{
+	transform: translateX(-3000px);
+}
 
 
 /*Media Queries */
