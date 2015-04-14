@@ -1,61 +1,365 @@
-@import 'ui';
-@import 'mixins';
 
-/* Boostrap overwrite */
-.well{ 
-	@include border-radius(5px);
-	border: 0; 
-	box-shadow: none;
-	border-color: transparent;
-	background: none;
+/* colors */
+$orange: #f24713;
+$light-blue: #7ecefd;
+$blue-grey: #3e454c;
+$white: #fff;
+$lime-green: #99bf38;
+$font-family:  'Lato', Helvetica, Arial, sans-serif;
 
+body{ 
+	font-family: $font-family;
 }
 
-.align-center{ text-align: center;}
+@mixin align-center{ text-align: center;}
+@mixin upper-case{ text-transform: uppercase;}
 
-.navbar-default{
-	background: $light-blue;
-	@include border-radius(5px);
-	box-shadow: none;
-	border-top: 7px solid #3e454c;
-	border-bottom: 0;
-	border-right: 0;
-	border-left:0;
-	height: 100px;
-	text-transform: uppercase;
-	font-weight: 500;
-	font-size: 1.3em;
+.margin-top-bottom-20{
+	margin: 40px 0;
 }
-.nav {
-	li {
-		margin-right: 35px;
+
+@mixin border-radius($radius){
+	 -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+/* Modal */
+.modal-content{
+	@include border-radius(0);
+}
+
+.modal{
+	ul{
+		margin-left: -25px;
+		color: #555;
+	}
+	h4{
+		color: $blue-grey;
 	}
 }
 
-.navbar-default {
-	.navbar-nav{
-		li{
-			a { 
-				color: $white; padding-top: 35px;
-				}
+.modal-header{
+	font-size: 2.9em;
+	color: $white;
+}
+
+#modalCapabilities .modal-header{ background: $light-blue;}
+#modalTechnology .modal-header{ background: $lime-green;}
+#modalPartner .modal-header{ background: #f24713;}
+
+/* Nav-Bar */
+.navbar-default{
+	background-color: $light-blue;
+	@include border-radius(0);
+	box-shadow: none;
+	border-top: 7px solid $blue-grey;
+	border-bottom: 0;
+	border-right: 0;
+	border-left: 0;
+	height: 60px;
+	@include upper-case;
+	font-weight: 500;
+	font-size: 1.3em;
+
+	.nav-bar{
+		>li{
+			> a{
+				color: $white;
+			}
+		}
+		.active, .open{
+			> a{
+				background: $blue-grey;
+				color: $white;
+				text-shadow: none;
+				box-shadow: none;
+				height: 53px;
+			}
+			>a:focus, a:hover{
+				background: $blue-grey;
+				color: $white;
 			}
 		}
 	}
+}
+
 
 .navbar-brand, .navbar-nav{
 	li{
-		> a{ text-shadow: none;}
+		a{
+			color: $white;
+		}
 	}
 }
-.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.open>a{
-	background: $blue-grey;
-	color: $white;
-	text-shadow: none;
-	box-shadow: none;
-	height: 93px;
+
+.nav{
+	margin-left: -15px;
+
+	> li{
+		margin-right: 35px;
+	}
+
 }
 
-.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
-	background: #3e454c;
-		color: #fff;
+
+/* Main Section */
+
+@mixin background-size-100{
+	background-size: 100%;
 }
+
+@for $index from 1 through 6{
+	h#{$index}{
+		font-family: $font-family;
+	}
+}
+
+section{
+	margin: 0 0 40px 0;
+
+	p{
+		font-size: 1.2em;
+
+	}
+
+	h1{
+		color: $blue-grey;
+	}
+}
+
+.logo{
+	display: block;
+	width: 250px;
+	background: url('../images/logo.png') no-repeat;
+ 	text-indent: -9999px;
+ 	@include background-size-100;
+}
+
+.main-heading{
+	font-weight: 900;
+	font-size: 2em;
+	line-height: 1.4em;
+	color: $blue-grey;
+}
+
+.main-image{
+background: #ededed url('../images/main-image.png')no-repeat;
+width: 100%;
+height: 255px;
+overflow: hidden;
+background-size: 51%;
+}
+
+.block{
+	width: 372px;
+	height: 218px;
+
+	&.one{
+		background: $light-blue url('../images/main-capabilities.png') no-repeat;
+		@include background-size-100;
+		+h3{
+			background: $light-blue;
+		}
+	}
+
+	&.two{
+		background: $lime-green url('../images/main-tech.png') no-repeat;
+		@include background-size-100;
+		+h3{
+			background: $lime-green;
+		}
+	}
+
+	&.three{
+		background: $orange url('../images/main-discover.png') no-repeat;
+		@include background-size-100;
+		+h3{
+			background:$orange;
+		}
+	}
+	+ h3{
+	color: $white;
+	height: 120px;
+	margin-top: -20px;
+	display: block;
+	text-align: center;
+	@include upper-case;
+	padding-top: 30px;
+	font-size: 2.7em;
+	font-weight: 300;
+	}
+}
+
+
+.more-info{
+	height: 50px;
+	background: $blue-grey;
+	display: block;
+	cursor: pointer;
+	width: 50%;
+	padding-top: 15px;
+	margin-top: -10px;
+	@include upper-case;
+	font-weight: 300;
+	@include align-center;
+	color: $white;
+	transition: color 300ms ease-in-out;
+
+	&:hover{
+		color: rgba(255,255,255, .6);
+		text-decoration: none;
+		color: $light-blue;
+	}
+	span{
+		display: inline-block;
+		transition: rotateX(300deg) 200ms ease-in-out;
+	}
+}
+
+
+/* Footer */
+
+footer{
+	background: #343a40;
+	width: 100%;
+	border-bottom: 50px solid 23272;
+	color: #5e6770;
+	@include upper-case;
+
+	h5{
+		margin-bottom: 30px;
+		color: $light-blue;
+	}
+
+	ul{
+		margin-left: -40px;
+		li{
+			list-style: none;
+			margin: 5px 0;
+			a{
+				color: #5e6770;
+			}
+			a:hover{
+				text-decoration: none;
+				color:$light-blue;
+			}
+		}
+	}
+	.fa{
+		font-size: 2em;
+		margin: 0 5px;
+		transition: color 500ms ease;
+	}
+	.fa:hover{
+		color: $light-blue;
+		cursor: pointer;
+	}
+}
+
+.animate{
+	transition: all 500s ease-in-out;
+}
+
+.offToLeft{
+	text-transform: translateX(-3000px);
+}
+
+/*Media Queries */
+@media screen and (max-width: 767px){
+
+	section h1{ font-size: 30px;}
+	section p{ font-size: 1em;}
+
+	.main-image{
+		background-size: contain;
+		height: inherit;
+		
+	}
+
+	.block{ width: initial;}
+	.block + h3{
+		height: 90px;
+		margin-top: -80px;
+		padding-top: 30px;
+		font-size: 2em;
+	}
+
+	#main .col-sm-4{
+		margin-bottom: 50px;
+	}
+
+	.main-heading{
+		background: rgba(255,255,255, .9);
+		margin: 0;
+		padding: 10px;
+		font-size: 1.7em;
+  		line-height: 1.5em;
+	}
+
+	.nav > li{
+		margin-right: 0;
+	}
+	.nav > li:hover{
+		background: rgba(0,0,0, .5);
+	}
+	.navbar-default{ height: 60px;}
+	
+	.navbar-default .navbar-collapse, .navbar-default .navbar-form{
+		position: relative;
+		z-index: 9;
+		background: #d5d5d5;
+	}
+	.nav li.active{ margin-right: 0;}
+	.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.open>a{
+		height: 60px;
+	}
+	.navbar-default .navbar-nav>li>a{ padding-top: 20px;}
+
+	footer h2{ margin-top: 0; font-size: 20px;}
+	footer h5{ margin-bottom: 5px;}
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px){
+
+	.main-heading{
+		background: rgba(255,255,255, .9);
+		margin: 0;
+		padding: 10px;
+		font-size: 1.7em;
+  		line-height: 1.5em;
+	}
+	.main-image{
+		background-size: contain;
+		height: inherit;
+		
+	}
+
+
+	.block +h3{
+		margin-top: -105px;
+		height: inherit;
+		padding-top: 15px;
+		font-size: 1.7em;
+	}
+	.more-info{
+		height: 40px;
+		width: 100%;
+		padding: 10px 0;
+		margin-top: 6px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
