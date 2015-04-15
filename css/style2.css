@@ -5,6 +5,15 @@ body {
 .margin-top-bottom-20 {
   margin: 40px 0; }
 
+.well {
+  background: none;
+  box-shadow: none;
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  border-radius: 0; }
+
 /* Modal */
 .modal-content {
   -webkit-border-radius: 0;
@@ -12,15 +21,16 @@ body {
   -ms-border-radius: 0;
   border-radius: 0; }
 
-.modal ul {
+.modal-body ul {
   margin-left: -25px;
   color: #555; }
-.modal h4 {
+.modal-body h4 {
   color: #3e454c; }
 
 .modal-header {
   font-size: 2.9em;
-  color: #fff; }
+  color: #fff;
+  text-transform: uppercase; }
 
 #modalCapabilities .modal-header {
   background: #7ecefd; }
@@ -33,7 +43,7 @@ body {
 
 /* Nav-Bar */
 .navbar-default {
-  background-color: #7ecefd;
+  background: #7ecefd;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   -ms-border-radius: 0;
@@ -47,15 +57,15 @@ body {
   text-transform: uppercase;
   font-weight: 500;
   font-size: 1.3em; }
-  .navbar-default .nav-bar > li > a {
+  .navbar-default .navbar-nav > li > a {
     color: #fff; }
-  .navbar-default .nav-bar .active > a, .navbar-default .nav-bar .open > a {
+  .navbar-default .navbar-nav .active > a, .navbar-default .navbar-nav .open > a {
     background: #3e454c;
     color: #fff;
     text-shadow: none;
     box-shadow: none;
     height: 53px; }
-  .navbar-default .nav-bar .active > a:focus, .navbar-default .nav-bar .active a:hover, .navbar-default .nav-bar .open > a:focus, .navbar-default .nav-bar .open a:hover {
+  .navbar-default .navbar-nav .active > a:focus, .navbar-default .navbar-nav .active a:hover, .navbar-default .navbar-nav .open > a:focus, .navbar-default .navbar-nav .open a:hover {
     background: #3e454c;
     color: #fff; }
 
@@ -105,6 +115,8 @@ section {
   font-size: 2em;
   line-height: 1.4em;
   color: #3e454c; }
+  .main-heading span {
+    color: #f24713; }
 
 .main-image {
   background: #ededed url("../images/main-image.png") no-repeat;
@@ -201,7 +213,6 @@ footer {
 @media screen and (max-width: 767px) {
   section h1 {
     font-size: 30px; }
-
   section p {
     font-size: 1em; }
 
@@ -211,12 +222,11 @@ footer {
 
   .block {
     width: initial; }
-
-  .block + h3 {
-    height: 90px;
-    margin-top: -80px;
-    padding-top: 30px;
-    font-size: 2em; }
+    .block + h3 {
+      height: 90px;
+      margin-top: -80px;
+      padding-top: 30px;
+      font-size: 2em; }
 
   #main .col-sm-4 {
     margin-bottom: 50px; }
@@ -230,31 +240,25 @@ footer {
 
   .nav > li {
     margin-right: 0; }
-
-  .nav > li:hover {
+  .nav li:hover {
     background: rgba(0, 0, 0, 0.5); }
-
-  .navbar-default {
-    height: 60px; }
-
-  .navbar-default .navbar-collapse, .navbar-default .navbar-form {
-    position: relative;
-    z-index: 9;
-    background: #d5d5d5; }
-
   .nav li.active {
     margin-right: 0; }
 
-  .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .open > a {
+  .navbar-default {
     height: 60px; }
-
-  .navbar-default .navbar-nav > li > a {
-    padding-top: 20px; }
+    .navbar-default .navbar-collapse, .navbar-default .navbar-form {
+      position: relative;
+      z-index: 9;
+      background: #d5d5d5; }
+    .navbar-default .navbar-nav .active a, .navbar-default .navbar-nav .open a {
+      height: 60px; }
+    .navbar-default .navbar-nav li a {
+      padding-top: 20px; }
 
   footer h2 {
     margin-top: 0;
     font-size: 20px; }
-
   footer h5 {
     margin-bottom: 5px; } }
 @media screen and (min-width: 768px) and (max-width: 1024px) {

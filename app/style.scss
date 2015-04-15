@@ -25,12 +25,19 @@ body{
           border-radius: $radius;
 }
 
+.well{
+	background: none;
+	box-shadow: none;
+	border: 0;
+	@include border-radius(0);
+}
+
 /* Modal */
 .modal-content{
 	@include border-radius(0);
 }
 
-.modal{
+.modal-body{
 	ul{
 		margin-left: -25px;
 		color: #555;
@@ -43,15 +50,16 @@ body{
 .modal-header{
 	font-size: 2.9em;
 	color: $white;
+	@include upper-case;
 }
 
 #modalCapabilities .modal-header{ background: $light-blue;}
 #modalTechnology .modal-header{ background: $lime-green;}
-#modalPartner .modal-header{ background: #f24713;}
+#modalPartner .modal-header{ background: $orange;}
 
 /* Nav-Bar */
 .navbar-default{
-	background-color: $light-blue;
+	background: $light-blue;
 	@include border-radius(0);
 	box-shadow: none;
 	border-top: 7px solid $blue-grey;
@@ -63,14 +71,14 @@ body{
 	font-weight: 500;
 	font-size: 1.3em;
 
-	.nav-bar{
+	.navbar-nav{
 		>li{
-			> a{
+			>a{
 				color: $white;
 			}
 		}
 		.active, .open{
-			> a{
+			>a{
 				background: $blue-grey;
 				color: $white;
 				text-shadow: none;
@@ -97,7 +105,7 @@ body{
 .nav{
 	margin-left: -15px;
 
-	> li{
+	>li{
 		margin-right: 35px;
 	}
 
@@ -142,7 +150,11 @@ section{
 	font-size: 2em;
 	line-height: 1.4em;
 	color: $blue-grey;
+	span{
+		color: $orange;
+	}
 }
+
 
 .main-image{
 background: #ededed url('../images/main-image.png')no-repeat;
@@ -269,8 +281,14 @@ footer{
 /*Media Queries */
 @media screen and (max-width: 767px){
 
-	section h1{ font-size: 30px;}
-	section p{ font-size: 1em;}
+	section{
+		h1{
+			font-size: 30px;
+		}
+		p{
+			font-size: 1em;
+		}
+	}
 
 	.main-image{
 		background-size: contain;
@@ -278,14 +296,16 @@ footer{
 		
 	}
 
-	.block{ width: initial;}
-	.block + h3{
-		height: 90px;
-		margin-top: -80px;
-		padding-top: 30px;
-		font-size: 2em;
+	.block{ 
+		width: initial;
+		+ h3{
+			height: 90px;
+			margin-top: -80px;
+			padding-top: 30px;
+			font-size: 2em;	
+		}
 	}
-
+	
 	#main .col-sm-4{
 		margin-bottom: 50px;
 	}
@@ -298,27 +318,50 @@ footer{
   		line-height: 1.5em;
 	}
 
-	.nav > li{
-		margin-right: 0;
+	.nav{ 
+		>li{
+				margin-right: 0;
+			}
+		li:hover{
+			background: rgba(0,0,0, .5);	
+		}
+		li.active{
+			margin-right: 0;
+		}	
 	}
-	.nav > li:hover{
-		background: rgba(0,0,0, .5);
-	}
-	.navbar-default{ height: 60px;}
 	
-	.navbar-default .navbar-collapse, .navbar-default .navbar-form{
-		position: relative;
-		z-index: 9;
-		background: #d5d5d5;
-	}
-	.nav li.active{ margin-right: 0;}
-	.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.open>a{
+	.navbar-default{ 
 		height: 60px;
-	}
-	.navbar-default .navbar-nav>li>a{ padding-top: 20px;}
 
-	footer h2{ margin-top: 0; font-size: 20px;}
-	footer h5{ margin-bottom: 5px;}
+		.navbar-collapse, .navbar-form{
+			position: relative;
+			z-index: 9;
+			background: #d5d5d5;	
+		}
+		.navbar-nav{
+			.active, .open{
+				a{
+					height: 60px;
+				}
+			}
+			li{
+				a{
+					padding-top: 20px;
+				}
+			}
+		}
+	}
+	
+	
+	footer{
+		h2{
+			margin-top: 0;
+			font-size: 20px;
+		}
+		h5{
+			margin-bottom: 5px;
+		}
+	}	
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px){
